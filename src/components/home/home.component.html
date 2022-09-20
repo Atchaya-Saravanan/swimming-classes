@@ -1,0 +1,111 @@
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/cover-image.jpg" class="d-block w-100 cover-image" alt="learn swimming">
+      <div class="carousel-caption d-md-block">
+        <h1>SWIMMING CLASSES</h1>
+        <p>Add an important life skill to your life and have fun while doing it!</p>
+        <button class="btn btn-primary" (click)="navToContact()">RESGISTER NOW</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-md">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" routerLinkActive="home">Home</a>
+        <a class="nav-link" [routerLink]="['/pricing']">Pricing</a>
+        <a class="nav-link" [routerLink]="['/timings']">Timings & Location</a>
+        <a class="nav-link" [routerLink]="['/course-details']">Course Details</a>
+        <a class="nav-link" [routerLink]="['/about']">About Us</a>
+        <a class="nav-link" [routerLink]="['/contact']">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="d-flex justify-content-center mt-5">
+    <h3>Why Choose Us?</h3>
+  </div>
+
+  <div class="d-flex flex-row my-3">
+    <div class="d-flex flex-column m-2 align-items-center choose-us-box">
+      <img src="assets/25years.jpg" alt="25 years">
+      <h5>25 Years & Beyond</h5>
+      We have succesfully completed 25 glorious years of teaching this important life skill.
+    </div>
+    <div class="d-flex flex-column m-2 align-items-center choose-us-box">
+      <img src="assets/people.png" alt="people">
+      <h5>No Age Restrictions</h5>
+      Whether you're a 4 year old or a 60 year old, we make swimming coaching fun for everyone.
+    </div>
+    <div class="d-flex flex-column m-2 align-items-center choose-us-box">
+      <img src="assets/professionals.png" alt="professional trainers">
+      <h5>Personalised Attention</h5>
+      With just 6-8 students per class, you are assured of personal focus of the coach during swimming training
+    </div>
+    <div class="d-flex flex-column m-2 align-items-center choose-us-box">
+      <img src="assets/safety.png" alt="safety">
+      <h5>Safety</h5>
+      Well-maintained and hygienically cleaned pool, after each session for the safety purposes.
+    </div>
+  </div>
+
+  <div class="d-flex flex-row my-5">
+    <div class="d-flex flex-column m-1">
+      <div class="card">
+        <img src="assets/swimming-pool.jpg" class="card-img-top card-image" alt="View of the swimming pool">
+        <div class="card-body">
+          <h5 class="card-title">Opening Hours & Batch Timings</h5>
+          <p class="card-text">Find the opening hours and batch timings of the indoor pool</p>
+          <button class="btn btn-primary" (click)="navToTimings()">See The Timings</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column m-1">
+      <div class="card">
+        <img src="assets/swimming-training.jpg" class="card-img-top card-image"
+          alt="Get trained from professionals">
+        <div class="card-body">
+          <h5 class="card-title">Swimming Levels</h5>
+          <p class="card-text">Choose your level based on your comfort - for both adults and children</p>
+          <button class="btn btn-primary" (click)="navToCourseDetails()">Course Details</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column m-1">
+      <div class="card">
+        <img src="assets/swimming-track.jpg" class="card-img-top card-image" alt="swimming Track">
+        <div class="card-body">
+          <h5 class="card-title">Tickets & Prices</h5>
+          <p class="card-text">Prices on entrances, monthly and yearly passes, and coaching classes</p>
+          <button class="btn btn-primary" (click)="navToPricing()">Know The Cost</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-dark text-center text-white">
+  <div class="container p-4">
+    <div class="d-flex flex-row justify-content-center">
+      <a [routerLink]="['/contact']" class="text-white mx-5">Register For Classes</a>
+      <a [routerLink]="['/course-details']" class="text-white mx-5">Course Details</a>
+      <a [routerLink]="['/about']" class="text-white mx-5">About Us</a>
+    </div>
+  </div>
+  <div class="text-center p-3 copyright">
+    © 2020 Copyright:
+    <a class="text-white" href="https://atchaya-saravanan.github.io/swimming-classes/">All rights reserved</a>
+  </div>
+</footer>

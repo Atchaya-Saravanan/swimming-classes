@@ -1,0 +1,88 @@
+<div class="page-heading d-flex justify-content-center">
+    <h1 class="d-flex align-items-center text-white">Contact Us & Register NOW</h1>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-md">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" [routerLink]="['/home']">Home</a>
+                <a class="nav-link" [routerLink]="['/pricing']">Pricing</a>
+                <a class="nav-link" [routerLink]="['/timings']">Timings & Location</a>
+                <a class="nav-link" [routerLink]="['/course-details']">Course Details</a>
+                <a class="nav-link" [routerLink]="['/about']">About Us</a>
+                <a class="nav-link active" aria-current="page" routerLinkActive="contact">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container py-5">
+    <h2 class="text-center text-primary"> Fill the form to register for classes
+        <div>Expect a callback within 24 hours</div>
+    </h2>
+    <div class="row justify-content-sm-center pt-5">
+        <div class="col-sm-6 shadow round pb-3">
+            <h1 class="text-center pt-3 text-secondary">Contact Form</h1>
+            <form [formGroup]="studentForm">
+                <div class="form-group">
+                    <label for="fullName" class="col-form-label">Full Name</label>
+                    <input type="text" formControlName="fullName" class="form-control">
+                    <small *ngIf="studentForm.get('fullName')!.errors?.['required'] 
+                            && (studentForm.get('fullName')!.touched || studentForm.get('fullName')!.dirty)"
+                        class="text-danger">
+                        Full Name is required
+                    </small>
+                    <small *ngIf="(studentForm.get('fullName')!.errors?.['minLength'] || studentForm.get('fullName')!.errors?.['maxLength']) 
+                            && (studentForm.get('fullName')!.touched || studentForm.get('fullName')!.dirty)"
+                        class="text-danger">
+                        Full Name must be greater than 2 characters and less than 25 characters
+                    </small>
+                    <small *ngIf="studentForm.get('fullName')!.errors?.['pattern'] 
+                            && (studentForm.get('fullName')!.touched || studentForm.get('fullName')!.dirty)"
+                        class="text-danger">
+                        Please enter a valid Full Name
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-form-label">Email</label>
+                    <input type="text" formControlName="email" class="form-control">
+                    <small
+                        *ngIf="studentForm.get('email')!.errors?.['required'] && (studentForm.get('email')!.touched || studentForm.get('email')!.dirty)"
+                        class="text-danger">Email is required</small>
+                    <small
+                        *ngIf="studentForm.get('email')!.errors?.['email'] && (studentForm.get('email')!.touched || studentForm.get('email')!.dirty)"
+                        class="text-danger">Please enter a valid Email</small>
+                </div>
+                <div class="form-group">
+                    <label for="mobileNumber" class="col-form-label">Mobile Number</label>
+                    <input type="text" maxLength="10" formControlName="mobileNumber" class="form-control">
+                    <small
+                        *ngIf="studentForm.get('mobileNumber')!.errors?.['required'] && (studentForm.get('mobileNumber')!.touched || studentForm.get('mobileNumber')!.dirty)"
+                        class="text-danger">Mobile Number is required</small>
+                    <small
+                        *ngIf="studentForm.get('mobileNumber')!.errors?.['pattern'] && (studentForm.get('mobileNumber')!.touched || studentForm.get('mobileNumber')!.dirty)"
+                        class="text-danger">Please enter a valid 10 digit number</small>
+                </div>
+                <button [disabled]="studentForm.invalid" class="btn btn-primary" type="submit"
+                    (click)="onSubmit()">Request A Call Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-center text-white mt-5">
+    <div class="container p-4">
+        <div class="d-flex flex-row justify-content-center">
+            <a [routerLink]="['/contact']" class="text-white mx-5">Register For Classes</a>
+            <a [routerLink]="['/course-details']" class="text-white mx-5">Course Details</a>
+            <a [routerLink]="['/about']" class="text-white mx-5">About Us</a>
+        </div>
+    </div>
+    <div class="text-center p-3 copyright">
+        © 2020 Copyright:
+        <a class="text-white" href="https://atchaya-saravanan.github.io/swimming-classes/">All rights reserved</a>
+    </div>
+</footer>
